@@ -16,12 +16,10 @@ app.get("/status", (request, response) =>
   response.json({ clients: clients.length })
 );
 
-const PORT = 8000;
-
 let clients = [];
 let coins = [];
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`coins Events service listening at http://localhost:${PORT}`);
 });
 
