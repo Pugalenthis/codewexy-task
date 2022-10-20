@@ -72,3 +72,7 @@ async function addCoin(request, respsonse, next) {
 }
 
 app.post("/coin", addCoin);
+
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
