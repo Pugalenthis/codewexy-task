@@ -20,7 +20,7 @@ let clients = [];
 let coins = [];
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`coins Events service listening at http://localhost:${PORT}`);
+  console.log(`server is listening`);
 });
 
 // ...
