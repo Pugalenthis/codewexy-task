@@ -16,7 +16,9 @@ function App() {
 
   useEffect(() => {
     if (!listening) {
-      const events = new EventSource("http://localhost:8000/events");
+      const events = new EventSource(
+        "https://codewexy-api.herokuapp.com/events"
+      );
 
       events.onmessage = (event) => {
         const parsedData = JSON.parse(event.data);
@@ -31,16 +33,22 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:8000/coin`, data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await axios.post(
+        `https://codewexy-api.herokuapp.com/coin`,
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       console.log(res);
     } catch (error) {
       console.log(error);
     }
   };
+
+  console.log(coins);
 
   return (
     <div>
